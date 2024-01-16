@@ -106,7 +106,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: hirosystems/stacks-api-e2e
+          images: janniksco/stacks-api-e2e
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=raw,value=stacks3.0,enable={{is_default_branch}}
@@ -138,5 +138,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=hirosystems/stacks-api-e2e:latest
+          cache-from: type=registry,ref=janniksco/stacks-api-e2e:latest
           cache-to: type=inline
